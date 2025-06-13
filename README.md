@@ -33,7 +33,7 @@
 
 ### 1. Clone & Install
 ```bash
-git clone https://github.com/your-username/firebase-mcp-server.git
+git clone https://github.com/minhquoctran2604/firebase-mcp-server.git
 cd firebase-mcp-server
 npm install
 ```

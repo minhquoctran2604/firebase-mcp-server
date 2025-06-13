@@ -33,12 +33,12 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/your-username/firebase-mcp-server.git"
+        "url": "git+https://github.com/minhquoctran2604/firebase-mcp-server.git"
     },
     "bugs": {
-        "url": "https://github.com/your-username/firebase-mcp-server/issues"
+        "url": "https://github.com/minhquoctran2604/firebase-mcp-server/issues"
     },
-    "homepage": "https://github.com/your-username/firebase-mcp-server#readme",
+    "homepage": "https://github.com/minhquoctran2604/firebase-mcp-server#readme",
     "funding": {
         "type": "github",
         "url": "https://github.com/sponsors/your-username"

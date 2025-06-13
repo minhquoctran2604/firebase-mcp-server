@@ -12,7 +12,7 @@ Thanks for your interest! 🎉
 
 ## Development Setup
 ```bash
-git clone https://github.com/minhquoctran2604/firebase-mcp-server.git
+git clone https://github.com/your-fork/firebase-mcp-server.git
 cd firebase-mcp-server
 npm install
 cp .env.example .env  # Add your Firebase config
