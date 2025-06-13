@@ -18,13 +18,14 @@
 
 ## 🎯 Why Choose This Over Cloud Solutions?
 
-| Feature | Firebase MCP Server | Cloud Alternatives |
+| Feature | Firebase MCP Server | Cloud Alternatives (e.g. HPKV) |
 |---------|--------------------|--------------------|
 | **Data Ownership** | ✅ Your Firebase, your data | ❌ Third-party servers |
-| **Cost** | ✅ Firebase free tier + unlimited usage | ❌ API call limits |
+| **Cost** | ✅ Firebase free tier + unlimited usage | ❌ API call limits (100/month free) |
 | **Customization** | ✅ Fully customizable | ❌ Limited to provider features |
 | **Privacy** | ✅ Complete control | ❌ Data shared with providers |
-| **Offline** | ✅ Works locally | ❌ Requires internet |
+| **Setup** | ⚠️ Manual setup required | ✅ Plug & play |
+| **AI Features** | ⚠️ Basic search | ✅ Semantic search, vector similarity |
 
 ## 🚀 Quick Start
 
@@ -176,23 +177,11 @@ npm run demo      # Run usage demonstration
 npm run dev       # Development mode
 ```
 
-## 🔐 Security & Privacy
+## 🔒 Security & Privacy
 
-### Firebase Database Rules
-For development (open access):
+### Quick Security Setup
 ```json
-{
-  "rules": {
-    "memories": {
-      ".read": true,
-      ".write": true
-    }
-  }
-}
-```
-
-For production, implement proper authentication:
-```json
+// Firebase Database Rules - Production
 {
   "rules": {
     "memories": {
@@ -203,47 +192,35 @@ For production, implement proper authentication:
 }
 ```
 
-### Environment Variables
-- Never commit `.env` files
-- Use Firebase project-level security
-- Consider VPC for sensitive applications
+### Security Checklist
+- ✅ Never commit `.env` files (already in .gitignore)
+- ✅ Use Firebase project-level security  
+- ✅ Implement authentication for production
+- ✅ Monitor Firebase console for unusual activity
+- ✅ Keep dependencies updated: `npm audit`
 
-## 🚀 Deployment Options
+## 🛠️ How It Works
 
-### Self-Hosted (Recommended)
-- Run on your local machine
-- Full control over data and access
-- No external dependencies
+### Architecture
+```
+Claude Desktop ↔ MCP Protocol ↔ Firebase MCP Server ↔ Firebase Realtime Database
+```
 
-### Cloud Deployment
-- Deploy to Railway, Heroku, or VPS
-- Use environment variables for config
-- Setup proper monitoring
+### Tool Flow Example
+```javascript
+// 1. User talks to Claude
+User: "I like React with TypeScript"
 
-## 🤝 Contributing
+// 2. Claude stores memory
+bb7_store_memory({
+  content: "User likes React with TypeScript",
+  metadata: { tags: ["preference", "tech"], importance: 8 }
+})
 
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature-name`
-3. Commit changes: `git commit -am 'Add feature'`
-4. Push to branch: `git push origin feature-name`
-5. Submit a Pull Request
+// 3. Later, Claude retrieves relevant info
+bb7_search_memories({ tag: "preference" })
+// Returns: "User likes React with TypeScript"
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- [Anthropic](https://anthropic.com) for the Model Context Protocol
-- [Firebase](https://firebase.google.com) for the excellent database service
-- [Claude Desktop](https://claude.ai) for MCP integration
-
-## 📞 Support
-
-- 🐛 **Issues**: [GitHub Issues](https://github.com/your-username/firebase-mcp-server/issues)
-- 📖 **Documentation**: [HOW-IT-WORKS.md](HOW-IT-WORKS.md)
-- 🔍 **Comparison**: [COMPARISON.md](COMPARISON.md)
-
----
-
-**⭐ Star this repo if it helps you build better AI assistants!**
+// 4. Claude gives personalized advice
+Claude: "Based on your React+TS preference, I recommend..."
+```

@@ -39,6 +39,10 @@
         "url": "https://github.com/your-username/firebase-mcp-server/issues"
     },
     "homepage": "https://github.com/your-username/firebase-mcp-server#readme",
+    "funding": {
+        "type": "github",
+        "url": "https://github.com/sponsors/your-username"
+    },
     "engines": {
         "node": ">=18.0.0"
     }
