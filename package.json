@@ -1,0 +1,45 @@
+{
+    "name": "firebase-mcp-server",
+    "version": "1.0.0",
+    "description": "Self-hosted MCP Server providing long-term memory for AI assistants using Firebase Realtime Database",
+    "main": "firebase-mcp-server.js",
+    "type": "module",
+    "scripts": {
+        "start": "node firebase-mcp-server.js",
+        "test": "node test.js",
+        "demo": "node demo.js",
+        "dev": "node firebase-mcp-server.js",
+        "check-config": "node check-config.js",
+        "workflow-demo": "node workflow-demo.js"
+    },
+    "dependencies": {
+        "@modelcontextprotocol/sdk": "^1.12.1", 
+        "firebase": "^11.9.1",
+        "dotenv": "^16.4.5"
+    },
+    "keywords": [
+        "mcp",
+        "firebase",
+        "server",
+        "ai",
+        "memory",
+        "claude",
+        "assistant",
+        "realtime-database",
+        "model-context-protocol",
+        "long-term-memory"
+    ],
+    "author": "Firebase MCP Server Contributors",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/your-username/firebase-mcp-server.git"
+    },
+    "bugs": {
+        "url": "https://github.com/your-username/firebase-mcp-server/issues"
+    },
+    "homepage": "https://github.com/your-username/firebase-mcp-server#readme",
+    "engines": {
+        "node": ">=18.0.0"
+    }
+}
